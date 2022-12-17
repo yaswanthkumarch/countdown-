@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>body {
+        background-color: rgba(0,150,255,1);
+    }
+    #countdown {
+        font-weight: bolder;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    h1 {
+        color: red; 
+        text-decoration:none ;
+    }
+    table {
+        border-radius: 10px;
+        margin-bottom: 40px;
+    
+    }
+    td {
+        background-color: rgba(255,120,70,1);
+        border-radius: 10px;
+        padding: 7px;
+        box-shadow:7px 7px 13px white;
+    }
+
+    a {
+        font-size: 40px;
+        background-color: black;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: bolder;
+        text-decoration: underline;
+        color: white;
+        color: red;
+        box-shadow:7px 7px 13px white;
+
+    }
+    i {
+        color: red;
+        width: 50px;
+    }</style>
+    <body>
+         <div id="countdown" align="center">
+<table align="center">
+    <h1>Birthday Countdown</h1>
+    <tr>
+        <td id="days"></td>
+        <td id="hours"></td>
+        <td id="minutes"></td>
+        <td id="seconds"></td>
+    </tr>
+    <tr>
+        <td>Days</td>
+        <td>Hours</td>
+        <td>Minutes</td>
+        <td>Seconds</td>
+    </tr>
+
+
+</table>
+
+</div>
+    </body>
+    <script>// Event Date
+    var eventDate=new Date("Dec 18, 2022, 00:00:00").getTime();
+
+    // Creating an interval function 
+
+    var x= setInterval(function(){
+   // get the current time
+
+   var now= new Date().getTime();
+
+   // The remaining time 
+
+   var remain= eventDate-now;
+
+   var s=Math.floor(remain/(1000));
+   var m=Math.floor(remain/(1000*60));
+   var h=Math.floor(remain/(1000*60*60));
+   var d=Math.floor(remain/(1000*60*60*24));
+
+
+   h %=24;
+   m %=60;
+   s %=60;
+
+   h=(h<10)?"0"+h:h;
+   m=(m<10)?"0"+m:m;
+   s=(s<10)?"0"+s:s;
+
+   document.getElementById('days').textContent=d;
+   document.getElementById('hours').textContent=h;
+   document.getElementById('minutes').textContent=m;
+   document.getElementById('seconds').textContent=s;
+
+    },1000);
+ //</script>
+</html>
